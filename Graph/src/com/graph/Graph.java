@@ -1,3 +1,6 @@
+package com.graph;
+
+import java.io.*;
 import java.util.*;
 public class Graph {
     /*要求：判断一个有向图中是否有回路，并且打印出所有的回路。
@@ -9,11 +12,23 @@ public class Graph {
     //用邻接表来初始化要检查的有向图
     private Map<String,List<String>> Graph = new HashMap<String, List<String>>();
 
-    public void initGraph(){
-        this.Graph.put("A", Arrays.asList("B"));
-        this.Graph.put("B", Arrays.asList("C","D"));
-        this.Graph.put("C", Arrays.asList("D"));
-        this.Graph.put("D", Arrays.asList("A"));
+    public void initGraph(String filename) throws IOException {
+
+        File file = new File(filename);
+        FileInputStream fileInputStream = new FileInputStream(file);
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream));
+        String line = null;
+        while ((line = bufferedReader.readLine()) != null){
+            String[] temp = line.split(",");
+            if (this.Graph.containsKey(temp[0])){
+                this.Graph.get(temp[0]).add(temp[1]);
+            }
+            else {
+                this.Graph.put(temp[0],Arrays.asList(temp[1]));
+            }
+        }
+        bufferedReader.close();
+
 
     }
 
@@ -114,8 +129,12 @@ public class Graph {
 
     public static void main(String[] args) {
         Graph a = new Graph();
-        a.initGraph();
-        a.SearchingStart("A");
+        try {
+            a.initGraph("edges2.txt");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        a.SearchingStart("5");
     }
 
 
