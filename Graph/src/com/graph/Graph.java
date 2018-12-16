@@ -10,7 +10,7 @@ public class Graph {
     */
 
     //用邻接表来初始化要检查的有向图
-    private Map<String,List<String>> Graph = new HashMap<String, List<String>>();
+    private Map<String,ArrayList<String>> Graph = new HashMap<String, ArrayList<String>>();
 
     public void initGraph(String filename) throws IOException {
 
@@ -21,10 +21,14 @@ public class Graph {
         while ((line = bufferedReader.readLine()) != null){
             String[] temp = line.split(",");
             if (this.Graph.containsKey(temp[0])){
-                this.Graph.get(temp[0]).add(temp[1]);
+                ArrayList<String> A = Graph.get(temp[0]);
+                A.add(temp[1]);
+                this.Graph.put(temp[0],A);
             }
             else {
-                this.Graph.put(temp[0],Arrays.asList(temp[1]));
+                ArrayList<String> newlist = new ArrayList<String>();
+                newlist.add(temp[1]);
+                this.Graph.put(temp[0],newlist);
             }
         }
         bufferedReader.close();
@@ -42,7 +46,10 @@ public class Graph {
     private ArrayList<String> nodeList = new ArrayList<String>();
 
 
-    public void SearchingStart(String firstNode){
+    //设置以用来存放最后的结果
+    ArrayList<ArrayList> result = new ArrayList<ArrayList>();
+
+    public ArrayList SearchingStart(String firstNode){
         nodeList.add(firstNode);
         NodeState.put(firstNode,true);
         List<String> tempList = Graph.get(firstNode);
@@ -63,10 +70,11 @@ public class Graph {
             //检测这个点是否已经在list中，如果已经在list中说明x与x之后遍历的所有元素形成了一个回路，打印出来
             if (nodeList.contains(x)){
                 List<String> loopList = nodeList.subList(nodeList.indexOf(x),nodeList.size());
+                ArrayList<String> toBeAddedInToReault = new ArrayList<String>();
                 for (String points:loopList){
-                    System.out.print(points+"-");
+                    toBeAddedInToReault.add(points);
                 }
-                System.out.println();
+                result.add(toBeAddedInToReault);
                 continue;
             }
 
@@ -78,7 +86,7 @@ public class Graph {
                 */
 
                 //如果这个节点没有邻接点了
-                if (Graph.get(x).isEmpty()) {
+                if (Graph.get(x) == null) {
                     NodeState.put(x,true);
                     continue;
                 }
@@ -125,16 +133,36 @@ public class Graph {
 
         }
         nodeList.remove(nodeList.size() - 1);
+
+        return result;
     }
 
     public static void main(String[] args) {
         Graph a = new Graph();
         try {
-            a.initGraph("edges2.txt");
+            a.initGraph("edges.txt");
         } catch (IOException e) {
             e.printStackTrace();
         }
-        a.SearchingStart("5");
+        ArrayList R = a.SearchingStart("5");
+        if (R.isEmpty()){
+            System.out.println("No");
+        }
+        else {
+            System.out.println(R.size());
+            System.out.println("-------------------");
+
+
+
+
+            for (int i = 0 ; i <= R.size() - 1 ; i ++){
+                ArrayList A = (ArrayList) R.get(i);
+                for (int j = 1 ; j <= A.size() - 1 ; j ++){
+                    System.out.print(A.get(j - 1)+"->");
+                }
+                System.out.println(A.get(A.size() - 1));
+            }
+        }
     }
 
 
