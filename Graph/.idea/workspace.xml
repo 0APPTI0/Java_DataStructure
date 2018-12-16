@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f0b3a761-61e0-4e6e-91a7-cc791e7f3275" name="Default" comment="写炸了">
+    <list default="true" id="f0b3a761-61e0-4e6e-91a7-cc791e7f3275" name="Default" comment="修正了一些bug == 弄了半天结果是for循环里面少了一个等号导致的QAQ">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/第9章图作业/com/graph/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/第9章图作业/com/graph/Graph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/第9章图作业/com/graph/GraphTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/graph/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/graph/Graph.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -22,15 +20,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/graph/Graph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="84" column="17" lean-forward="true" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="17" />
+            <state relative-caret-position="412">
+              <caret line="151" column="35" selection-start-line="151" selection-start-column="35" selection-end-line="151" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#345#372#0" expanded="true" />
-                <element signature="e#1095#1103#0" expanded="true" />
-                <element signature="e#1452#1460#0" expanded="true" />
-                <element signature="e#1532#1543#0" expanded="true" />
-                <element signature="e#2233#2241#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -77,6 +70,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -104,8 +99,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -115,7 +108,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544958842132" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544958922741" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -221,7 +214,8 @@
       <workItem from="1544719822854" duration="2446000" />
       <workItem from="1544842799891" duration="368000" />
       <workItem from="1544843451111" duration="1000" />
-      <workItem from="1544949211244" duration="3360000" />
+      <workItem from="1544949211244" duration="3480000" />
+      <workItem from="1544959084707" duration="31000" />
     </task>
     <task id="LOCAL-00001" summary="更新IJ自动添加了一些代码">
       <created>1544718993186</created>
@@ -241,7 +235,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22856000" />
+    <option name="totallyTimeSpent" value="23007000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -256,8 +250,8 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49446493" visible="true" weight="0.2167382" />
-      <window_info id="Structure" order="1" sideWeight="0.50553507" side_tool="true" visible="true" weight="0.2167382" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49318463" visible="true" weight="0.21959943" />
+      <window_info id="Structure" order="1" sideWeight="0.5068154" side_tool="true" visible="true" weight="0.21959943" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -265,7 +259,7 @@
       <window_info id="Favorites" order="6" sideWeight="0.5006196" side_tool="true" weight="0.26752505" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.3283767" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" weight="0.3283767" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3977695" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -274,7 +268,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007153" side_tool="true" weight="0.32917705" />
-      <window_info anchor="bottom" id="Messages" order="11" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32961586" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -294,32 +288,28 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="更新IJ自动添加了一些代码" />
     <MESSAGE value="写炸了" />
-    <option name="LAST_COMMIT_MESSAGE" value="写炸了" />
+    <MESSAGE value="修正了一些bug == 弄了半天结果是for循环里面少了一个等号导致的QAQ" />
+    <option name="LAST_COMMIT_MESSAGE" value="修正了一些bug == 弄了半天结果是for循环里面少了一个等号导致的QAQ" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/edges2.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/test/com/graph/GraphTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/graph/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="151" column="35" selection-start-line="151" selection-start-column="35" selection-end-line="151" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/edges.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="2" selection-start-line="4" selection-end-line="4" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/graph/Graph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="84" column="17" lean-forward="true" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#345#372#0" expanded="true" />
-            <element signature="e#1095#1103#0" expanded="true" />
-            <element signature="e#1452#1460#0" expanded="true" />
-            <element signature="e#1532#1543#0" expanded="true" />
-            <element signature="e#2233#2241#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

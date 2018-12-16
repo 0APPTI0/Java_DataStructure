@@ -149,8 +149,9 @@ public class Graph {
             System.out.println("No");
         }
         else {
-            System.out.println(R.size());
+            System.out.println("Yes");
             System.out.println("-------------------");
+            System.out.println(R.size());
 
 
 
