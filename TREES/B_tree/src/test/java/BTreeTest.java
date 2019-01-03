@@ -10,7 +10,7 @@ import static org.junit.Assert.assertTrue;
 /**
  * BTree Tester.
  *
- * @author <Authors name>
+ * @author <.>
  * @version 1.0
  * @since <pre>六月 1, 2014</pre>
  */
