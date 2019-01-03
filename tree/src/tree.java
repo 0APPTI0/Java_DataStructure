@@ -62,6 +62,24 @@ public class tree {
         return list.get(0);
     }
 
+    public node creatTree(String preOrder , String InOrder){
+        int index = 0;
+        for (int i = 0 ; i < InOrder.length() ; i ++){
+            if (InOrder.charAt(i) == preOrder.charAt(0)){
+                index = i;
+                break;
+            }
+        }
+        node tempRoot = new node(InOrder.charAt(index));
+        //考虑没有左边子树的情况
+        //考虑没有右边子树的情况
+        //两边都有子树的情况
+        String InOrderLeftChildTree = InOrder.substring(0,index);
+        String InorderRightChildTree = InOrder.substring(index+1);
+        //String PreOrderLeftChildTree =
+        return null;
+    }
+
     //先序遍历一棵树
     public void prePrint(node tree){
         System.out.print(tree.content);
