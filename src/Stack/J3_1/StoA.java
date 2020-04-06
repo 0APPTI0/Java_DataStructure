@@ -1,4 +1,4 @@
-package Lists.J3_1;
+package Stack.J3_1;
 
 import java.util.Stack;
 
@@ -11,11 +11,6 @@ import java.util.Stack;
 5.遇到第二个运算符。如果这个运算符比栈里的第一个运算符优先级高，那么继续，压入这个运算符下一个数字；
  */
 public class StoA{
-
-
-    public static void main(String[] args) {
-        evaluate("3 + 2 - 5 * 6 / 3 ;");
-    }
     public static float evaluate(String exp) {
         //操作数栈
         Stack<Float> opnd = new Stack<>();

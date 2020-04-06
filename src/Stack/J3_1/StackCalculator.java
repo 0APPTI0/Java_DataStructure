@@ -1,6 +1,9 @@
-package Lists.J3_1;
+package Stack.J3_1;
 import java.util.*;
 
+/*
+输入一串字符串，利用栈来解析、计算计算式
+*/
 public class StackCalculator {
 
     public static void main(String[] args) {

@@ -17,30 +17,6 @@ public class Graph {
 
     public void initGraph() throws IOException {
 
-        /*
-        Scanner sc = new Scanner(System.in);
-        String line = "";
-        while ( /*!sc.hasNext("0")sc.hasNext()){
-            line = sc.nextLine();
-            String[] temp = line.split(",");
-            if (!POINTS.contains(temp[0])){
-                POINTS.add(temp[0]);
-            }
-            if (!POINTS.contains(temp[1])){
-                POINTS.add(temp[1]);
-            }
-            if (this.Graph.containsKey(temp[0])){
-                ArrayList<String> A = Graph.get(temp[0]);
-                A.add(temp[1]);
-                this.Graph.put(temp[0],A);
-            }
-            else {
-                ArrayList<String> newList = new ArrayList<>();
-                newList.add(temp[1]);
-                this.Graph.put(temp[0],newList);
-            }
-        }
-        */
 
         File file = new File(filename);
         FileInputStream fileInputStream = new FileInputStream(file);
@@ -66,15 +42,11 @@ public class Graph {
             }
         }
         bufferedReader.close();
-
-
-
     }
 
 
     //建造一个HashMap来记录每一个点的状态（是否被访问过）
     private HashMap<String,Boolean> NodeState = new HashMap<String, Boolean>();
-
 
 
     //用来存放已经被遍历过的点
@@ -93,18 +65,6 @@ public class Graph {
             return;
         }
         for (String x : tempList){
-
-/*
-
-            for (String mmm : nodeList){
-                System.out.print(mmm);
-            }
-
-            System.out.println();
-            System.out.println("现在正在访问的是"+x);
-
-*/
-
             //检测这个点是否已经在list中，如果已经在list中说明x与x之后遍历的所有元素形成了一个回路，打印出来
             if (nodeList.contains(x)){
                 List<String> loopList = nodeList.subList(nodeList.indexOf(x),nodeList.size());
@@ -122,19 +82,11 @@ public class Graph {
             }
 
             else {
-                /*
-                if (NodeState.getOrDefault(x,false)){
-                    SearchingStart(x);
-                }
-                */
-
                 //如果这个节点没有邻接点了
                 if (Graph.get(x) == null) {
                     NodeState.put(x,true);
                     continue;
                 }
-
-
 
                 //如果这个节点指向的所有邻接点都已经被访问过了
                 boolean allVisited = true;
@@ -166,7 +118,6 @@ public class Graph {
                     continue;
                 }
 
-
                 //如果这个节点有没有被访问过的邻接点
                 else {
                     SearchingStart(x);
@@ -176,8 +127,6 @@ public class Graph {
 
         }
         nodeList.remove(nodeList.size() - 1);
-
-        //return result;
     }
 
 

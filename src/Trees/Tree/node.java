@@ -2,11 +2,11 @@ package Trees.Tree;
 
 public class node {
     //这是一个树的节点类
-    public node left = null;
+    public node left;
 
-    public node right = null;
+    public node right;
 
-    public char content ;
+    public char content;
 
     public node(char content){
         this.content = content;

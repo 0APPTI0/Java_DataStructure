@@ -48,18 +48,6 @@ public class tree {
                 list.get(i).right = null;
             }
 
-            //失败的算法
-            /*
-            if (((2 * i + 1 )< string.length()) && string.charAt( 2 * i + 1) != '*'){
-                list.get(i).left = list.get(2 * i + 1);
-            }
-            else list.get(i).left = null;
-
-            if (((2 * i + 2) < string.length()) && string.charAt( 2 * i + 2) != '*'){
-                list.get(i).left = list.get(2 * i + 2);
-            }
-            else list.get(i).left = null;
-            */
         }
         return list.get(0);
     }
